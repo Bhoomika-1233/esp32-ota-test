@@ -58,7 +58,7 @@ float totalLitres = 0;
 float scheduleLitres = 0;
 float dailyTotalLitres = 0;
 unsigned long lastFlowCheck = 0;
-const unsigned long FLOW_INTERVAL = 10000; // 10 sec
+const unsigned long FLOW_INTERVAL = 100000; // 10 sec
 bool relayState = false;
 int currentDay = 0;
 
