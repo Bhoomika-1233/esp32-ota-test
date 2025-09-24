@@ -26,7 +26,7 @@ const char* otaUpdateUrl = "https://raw.githubusercontent.com/Bhoomika-1233/esp3
 const char* otaVersionUrl = "https://raw.githubusercontent.com/Bhoomika-1233/esp32-ota-test/refs/heads/main/otainternet.ino";  // Replace with your version check URL
 String currentVersion = "1.0.0";
 unsigned long lastOTACheck = 0;
-const unsigned long OTA_CHECK_INTERVAL = 600000; // Check every 10 minutes (600,000 ms)
+const unsigned long OTA_CHECK_INTERVAL = 3600000; // Check every hour
 
 // ------------------ LOGS ------------------
 String logBuffer = "";
@@ -305,7 +305,7 @@ void setupOTA() {
 
   ArduinoOTA.begin();
   appendLog("Local OTA Ready - Host: SmartIrrigation.local");
-  appendLog("Internet OTA enabled - Checking every 10 minutes");
+  appendLog("Internet OTA enabled - Checking every hour");
   
   // Initial check for updates
   checkForOTAUpdate();
@@ -623,7 +623,7 @@ String getDashboardHTML() {
   page += "Password: irrigation123</p>";
   page += "<p><strong>Internet Updates:</strong><br>";
   page += "Current Version: " + currentVersion + "<br>";
-  page += "Auto-check: Every 10 minutes<br>";
+  page += "Auto-check: Every hour<br>";
   String otaStatus = wifiConfigured ? "Enabled" : "Disabled - WiFi Required";
   page += "Status: " + otaStatus + "</p>";
   page += "</div>";
