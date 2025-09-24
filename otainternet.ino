@@ -24,7 +24,7 @@ bool wifiConnecting = false;
 // ------------------ OTA CONFIG ------------------
 const char* otaUpdateUrl = "https://raw.githubusercontent.com/Bhoomika-1233/esp32-ota-test/refs/heads/main/ota.txt"; // Replace with your server URL
 const char* otaVersionUrl = "https://raw.githubusercontent.com/Bhoomika-1233/esp32-ota-test/refs/heads/main/otainternet.ino";  // Replace with your version check URL
-String currentVersion = "1.0.0";
+String currentVersion = "1.0.1";
 unsigned long lastOTACheck = 0;
 const unsigned long OTA_CHECK_INTERVAL = 3600000; // Check every hour
 
